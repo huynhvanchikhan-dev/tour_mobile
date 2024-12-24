@@ -21,4 +21,20 @@ class DestinationsApiService {
       throw Exception('Error fetching destinations: $e');
     }
   }
+
+  // Fetch single tour details
+  Future<List<Destination>> fetchTourByDestination(String destinationId) async {
+    try {
+      final response = await http.get(Uri.parse('$baseUrl/api/v1/tours/destinations/${destinationId}/tours'));
+
+      if (response.statusCode == 202) {
+        List<dynamic> jsonData = json.decode(response.body);
+        return jsonData.map((data) => Destination.fromJson(data)).toList();
+      } else {
+        throw Exception('Failed to load destinations');
+      }
+    } catch (e) {
+      throw Exception('Error fetching destinations: $e');
+    }
+  }
 }

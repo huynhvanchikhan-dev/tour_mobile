@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:tour_booking/models/destination_model.dart';
 import 'package:tour_booking/models/tour_model.dart';
+import 'package:tour_booking/screens/fillter_soft_screen.dart';
 import 'package:tour_booking/screens/post_screen.dart';
 import 'package:tour_booking/services/destinations_api_service.dart';
 import 'package:tour_booking/services/tours_api_service.dart';
+import 'package:tour_booking/utils/api_base_config.dart';
 import 'package:tour_booking/widgets/home_app_bar.dart';
 import 'package:tour_booking/widgets/home_bottom_bar.dart';
 import 'package:intl/intl.dart';
 
 class HomeScreen extends StatelessWidget {
   final DestinationsApiService destinationsApiService =
-      DestinationsApiService(baseUrl: 'http://192.168.1.5:8080');
+      DestinationsApiService(baseUrl: 'http://${ApiBaseConfig.IP}:8080');
   final ToursApiService toursApiService =
-      ToursApiService(baseUrl: 'http://192.168.1.5:8080');
+      ToursApiService(baseUrl: 'http://${ApiBaseConfig.IP}:8080');
   final formatCurrency = NumberFormat.currency(locale: 'vi_VN', symbol: '₫');
 
   @override
@@ -60,6 +62,7 @@ class HomeScreen extends StatelessWidget {
                       return InkWell(
                         onTap: () {
                           // Handle destination click
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => FillterSoftScreen()));
                         },
                         child: Container(
                           width: 160,

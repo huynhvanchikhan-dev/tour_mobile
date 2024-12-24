@@ -13,6 +13,7 @@ class Destination {
 
   // Tạo phương thức để chuyển JSON thành đối tượng Destination
   factory Destination.fromJson(Map<String, dynamic> json) {
+    
     return Destination(
       id: json['id'],
       name: json['name'],

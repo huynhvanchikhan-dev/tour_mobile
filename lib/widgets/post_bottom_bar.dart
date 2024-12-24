@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tour_booking/models/tour_model.dart';
 import 'package:intl/intl.dart';
+import 'package:tour_booking/screens/full_screen_gallery.dart';
 
 class PostBottomBar extends StatelessWidget {
   final Tour tour;
@@ -59,10 +60,9 @@ class PostBottomBar extends StatelessWidget {
           Text(
             "Giá: ${formatCurrency.format(tour.price)}",
             style: TextStyle(
-              color: Colors.black54,
-              fontSize: 18,
-              fontWeight: FontWeight.w600
-            ),
+                color: Colors.black54,
+                fontSize: 18,
+                fontWeight: FontWeight.w600),
           ),
           SizedBox(height: 15),
           // Description
@@ -113,7 +113,10 @@ class PostBottomBar extends StatelessWidget {
                     Expanded(
                       child: Text(
                         tour.itinerary[index],
-                        style: TextStyle(color: Colors.black54, fontSize: 16,),
+                        style: TextStyle(
+                          color: Colors.black54,
+                          fontSize: 16,
+                        ),
                       ),
                     ),
                   ],
@@ -126,15 +129,25 @@ class PostBottomBar extends StatelessWidget {
           Row(
             children: tour.images.take(3).map((imageUrl) {
               return Expanded(
-                child: Padding(
-                  padding: EdgeInsets.only(right: 5),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
-                    child: Image.network(
-                      imageUrl,
-                      fit: BoxFit.cover,
-                      width: 120,
-                      height: 90,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => FullScreenGallery(images: tour.images),
+                      ),
+                    );
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.only(right: 5),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15),
+                      child: Image.network(
+                        imageUrl,
+                        fit: BoxFit.cover,
+                        width: 120,
+                        height: 90,
+                      ),
                     ),
                   ),
                 ),
@@ -186,7 +199,9 @@ class PostBottomBar extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 20,)
+          SizedBox(
+            height: 20,
+          )
         ],
       ),
     );

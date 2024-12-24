@@ -26,6 +26,12 @@ class Tour {
   });
 
   factory Tour.fromJson(Map<String, dynamic> json) {
+    final dateList = json['departureDate'] as List<dynamic>?;
+    String dateString = '';
+    if (dateList != null && dateList.isNotEmpty) {
+      // ghép mảng thành chuỗi "2024-12-07"
+      dateString = dateList.join('-'); 
+    }
     return Tour(
       id: json['id'],
       title: json['title'],
@@ -33,7 +39,7 @@ class Tour {
       itinerary: List<String>.from(json['itinerary'] ?? []),
       price: (json['price'] as num).toDouble(),
       durationDays: json['durationDays'] ?? 0,
-      departureDate: json['departureDate'] ?? '',
+      departureDate: dateString,
       destination: json['destination'] ?? '',
       images: List<String>.from(json['images'] ?? []),
       featured: json['featured'] ?? false,
