@@ -3,6 +3,8 @@ plugins {
     id "kotlin-android"
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id "dev.flutter.flutter-gradle-plugin"
+    // Nếu dùng Google Services (Firebase, vv), bỏ comment dòng dưới:
+    // id "com.google.gms.google-services"
 }
 
 android {
@@ -20,25 +22,49 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.example.tour_booking"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+
+        // Kích hoạt MultiDex:
+        multiDexEnabled true
+
+        // manifestPlaceholders: thường dùng để truyền clientId, deep link, ...
+        // Nếu bạn dùng Google Sign In, khai báo WebClientId tại đây:
+        manifestPlaceholders = [
+            // Tên scheme mặc định, thay YOUR_CLIENT_ID bằng id thực tế của bạn
+            'appAuthRedirectScheme': 'com.googleusercontent.apps.161623696141-n3mg0s8lftr6u73i28fcms0r9664sboa',
+            // Tên string chứa default_web_client_id. 
+            // Trong /android/app/src/main/res/values/strings.xml bạn cần có:
+            // <string name="default_web_client_id">[Your Client ID].apps.googleusercontent.com</string>
+            'defaultWebClientId': "@strings/default_web_client_id"
+        ]
+    }
+
+   signingConfigs {
+        release {
+            keyAlias 'mykeyalias'             // Bí danh của key
+            keyPassword 'chikhan123'          // Mật khẩu của key
+            storeFile file('/home/hock/Downloads/my-release-key.keystore') // Đường dẫn tới keystore, đảm bảo file này đặt trong thư mục phù hợp trong dự án
+            storePassword 'chikhan123'        // Mật khẩu của keystore
+        }
     }
 
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.debug
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 }
 
 flutter {
-    source = "../.."
+    source "../.."
 }
+
+// Nếu dùng Google Services (Firebase, vv), bỏ comment dòng dưới:
+// apply plugin: "com.google.gms.google-services"

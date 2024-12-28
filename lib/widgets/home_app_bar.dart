@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:tour_booking/models/auth_manager.dart';
+import 'package:tour_booking/screens/login_screen.dart';
 
 class HomeAppBar extends StatefulWidget {
   const HomeAppBar({Key? key}) : super(key: key);
@@ -13,7 +14,8 @@ class HomeAppBar extends StatefulWidget {
 
 class _HomeAppBarState extends State<HomeAppBar> {
   String? _locationName; // Biến lưu tên địa điểm hiện tại (City, Country, v.v.)
-  bool _isFetchingLocation = false; // Cờ để hiển thị trạng thái đang lấy location
+  bool _isFetchingLocation =
+      false; // Cờ để hiển thị trạng thái đang lấy location
 
   @override
   void initState() {
@@ -118,7 +120,9 @@ class _HomeAppBarState extends State<HomeAppBar> {
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: Colors.white,
-                boxShadow: const [BoxShadow(color: Colors.black26, blurRadius: 6)],
+                boxShadow: const [
+                  BoxShadow(color: Colors.black26, blurRadius: 6)
+                ],
                 borderRadius: BorderRadius.circular(15),
               ),
               child: const Icon(Icons.sort_rounded, size: 28),
@@ -137,7 +141,8 @@ class _HomeAppBarState extends State<HomeAppBar> {
                     _isFetchingLocation
                         ? const Text(
                             "Đang xác định...",
-                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w500),
                           )
                         : Text(
                             _locationName ?? "Không thể xác định",
@@ -153,6 +158,12 @@ class _HomeAppBarState extends State<HomeAppBar> {
                     TextButton(
                       onPressed: () {
                         // chuyển sang màn hình login
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LoginScreen(),
+                          ),
+                        );
                       },
                       child: const Text("Đăng nhập"),
                     ),
@@ -173,7 +184,9 @@ class _HomeAppBarState extends State<HomeAppBar> {
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: Colors.white,
-                boxShadow: const [BoxShadow(color: Colors.black26, blurRadius: 6)],
+                boxShadow: const [
+                  BoxShadow(color: Colors.black26, blurRadius: 6)
+                ],
                 borderRadius: BorderRadius.circular(15),
               ),
               child: const Icon(Icons.search, size: 28),
@@ -184,4 +197,3 @@ class _HomeAppBarState extends State<HomeAppBar> {
     );
   }
 }
-        
