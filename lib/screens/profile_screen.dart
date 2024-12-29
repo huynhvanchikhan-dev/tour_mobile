@@ -30,7 +30,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   void initState() {
     super.initState();
-    _userApi = UserApiService(baseUrl: 'http://192.168.1.5:8080');
+    _userApi = UserApiService(baseUrl: 'http://54.252.193.168:8080');
     _fetchUserProfile();
   }
 
