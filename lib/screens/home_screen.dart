@@ -40,6 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
       final destinationsFuture = _destinationsApiService.fetchDestinations();
       final toursFuture = _toursApiService.fetchTours();
       // Chờ cả hai future cùng hoàn thành
+      
       return await Future.wait([destinationsFuture, toursFuture]);
     } catch (e) {
       // Bắt lỗi tại đây (mất mạng, server error, v.v.)
@@ -75,11 +76,12 @@ class _HomeScreenState extends State<HomeScreen> {
               } 
               // Nếu có lỗi
               else if (snapshot.hasError) {
+                String error = snapshot.error.toString();
                 return Center(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Text('Đã có lỗi xảy ra, vui lòng thử lại sau.'),
+                      Text(error),
                       const SizedBox(height: 8),
                       ElevatedButton(
                         onPressed: _onRefresh, 

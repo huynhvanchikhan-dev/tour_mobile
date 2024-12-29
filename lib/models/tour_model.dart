@@ -3,7 +3,7 @@ class Tour {
   final String title;
   final String description;
   final List<String> itinerary;
-  final double price;
+  final int price;
   final int durationDays;
   final String departureDate;
   final String destination;
@@ -37,7 +37,7 @@ class Tour {
       title: json['title'],
       description: json['description'] ?? '',
       itinerary: List<String>.from(json['itinerary'] ?? []),
-      price: (json['price'] as num).toDouble(),
+      price: (json['price'] as num).toInt(),
       durationDays: json['durationDays'] ?? 0,
       departureDate: dateString,
       destination: json['destination'] ?? '',

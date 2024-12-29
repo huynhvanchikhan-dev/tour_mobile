@@ -4,6 +4,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:tour_booking/models/auth_manager.dart';
 import 'package:tour_booking/screens/login_screen.dart';
+import 'package:tour_booking/screens/register_screen.dart';
 
 class HomeAppBar extends StatefulWidget {
   const HomeAppBar({Key? key}) : super(key: key);
@@ -171,6 +172,12 @@ class _HomeAppBarState extends State<HomeAppBar> {
                     TextButton(
                       onPressed: () {
                         // chuyển sang màn hình đăng ký
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => RegisterScreen(),
+                          ),
+                        );
                       },
                       child: const Text("Đăng ký"),
                     ),

@@ -73,4 +73,58 @@ class UserApiService {
     }
     // Nếu = 200 thì OK.
   }
+
+  Future<String> login(String email, String password) async {
+    final url = Uri.parse('$baseUrl/api/v1/auth/login');
+    final response = await http.post(
+      url,
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode({'email': email, 'password': password}),
+    );
+
+    if (response.statusCode == 202) {
+      final data = jsonDecode(response.body);
+      return data['token']; // Giả sử server trả về token trong phản hồi
+    } else {
+      throw Exception('Failed to login: ${response.body}');
+    }
+  }
+
+  Future<String> registerUser(String email, String username, String password, String phoneNumber, String address) async {
+    final url = Uri.parse('$baseUrl/api/v1/auth/register');
+    final response = await http.post(
+      url,
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode({
+        'email': email,
+        'username': username,
+        'password': password,
+        'phone_number': phoneNumber,
+        'address': address,
+      }),
+    );
+
+    if (response.statusCode == 201) {
+      final data = jsonDecode(response.body);
+      return data['email']; // Assuming the API returns this
+    } else {
+      throw Exception('Failed to register: ${response.body}');
+    }
+  }
+
+ Future<String> verifyCode(String email, String code) async {
+  final url = Uri.parse('$baseUrl/api/v1/auth/verify');
+  final response = await http.post(
+    url,
+    headers: {'Content-Type': 'application/json'},
+    body: jsonEncode({'email': email, 'verify_code': code}),
+  );
+
+  if (response.statusCode == 201) {
+    final data = jsonDecode(response.body);
+    return data['token'];  // Trích xuất token từ phản hồi
+  } else {
+    throw Exception('Verification failed: ${response.body}');
+  }
+}
 }

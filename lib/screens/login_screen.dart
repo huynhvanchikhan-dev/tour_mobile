@@ -1,10 +1,9 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:google_sign_in/google_sign_in.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:tour_booking/models/auth_manager.dart';
 import 'package:tour_booking/screens/home_screen.dart';
+import 'package:tour_booking/services/user_api_service.dart';
+import 'package:tour_booking/models/auth_manager.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -19,14 +18,6 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _isLoading = false;
   String? _error;
 
-  // Dùng Android client ID. LƯU Ý: Nếu cần idToken cho server, nên dùng Web client ID.
-  final GoogleSignIn _googleSignIn = GoogleSignIn(
-    scopes: ['email', 'profile'],
-    // Thay = Android client ID (bạn vừa tạo): 
-    // Nếu cần server verify => khuyên dùng Web client ID thay vì Android client ID.
-    serverClientId: "161623696141-n3mg0s8lftr6u73i28fcms0r9664sboa.apps.googleusercontent.com",
-  );
-
   @override
   void dispose() {
     _emailController.dispose();
@@ -40,92 +31,22 @@ class _LoginScreenState extends State<LoginScreen> {
       _error = null;
     });
 
-    final email = _emailController.text.trim();
-    final password = _passController.text.trim();
-
     try {
-      final response = await http.post(
-        Uri.parse('http://192.168.1.5:8080/api/v1/auth/login'),
-        headers: {'Content-Type': 'application/json'},
-        body: jsonEncode({"email": email, "password": password}),
+      final token =
+          await Provider.of<UserApiService>(context, listen: false).login(
+        _emailController.text.trim(),
+        _passController.text.trim(),
       );
-
-      if (response.statusCode == 202) {
-        final body = jsonDecode(response.body);
-        final token = body['token'];
-
-        final auth = context.read<AuthManager>();
-        await auth.login(token);
-
-        Navigator.of(context).pushReplacementNamed('/profile');
-      } else {
-        _error = "Đăng nhập thất bại: ${response.body}";
-      }
-    } catch (e) {
-      _error = "Có lỗi xảy ra: $e";
-    } finally {
-      setState(() {
-        _isLoading = false;
-      });
-    }
-  }
-
-  Future<void> _handleGoogleLogin() async {
-    setState(() {
-      _isLoading = true;
-      _error = null;
-    });
-
-    try {
-      final googleUser = await _googleSignIn.signIn();
-      if (googleUser == null) {
-        // Người dùng cancel
-        setState(() => _isLoading = false);
-        return;
-      }
-
-      final googleAuth = await googleUser.authentication;
-      final idToken = googleAuth.idToken;   // Có thể null nếu serverClientId chưa là web client ID
-      final accessToken = googleAuth.accessToken;
-
-      // Debug
-      print("idToken: $idToken");
-      print("accessToken: $accessToken");
-
-      if (idToken == null) {
-        _error = "Không lấy được idToken từ Google (check serverClientId).";
-        setState(() => _isLoading = false);
-        return;
-      }
-
-      // Gửi idToken lên server (server đang validate token?)
-      final response = await http.post(
-        Uri.parse('http://192.168.1.5:8080/api/v1/auth/google'),
-        headers: {'Content-Type': 'application/json'},
-        body: jsonEncode(idToken),
+      Provider.of<AuthManager>(context, listen: false).login(token);
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => HomeScreen(),
+        ),
       );
-
-      if (response.statusCode == 202 || response.statusCode == 201) {
-        final body = jsonDecode(response.body);
-        final token = body['token'];
-
-        final auth = context.read<AuthManager>();
-        await auth.login(token);
-
-       Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                HomeScreen(),
-                                          ),
-                                        );
-      } else {
-        _error = "Đăng nhập Google thất bại: ${response.body}";
-      }
     } catch (e) {
-      _error = "Có lỗi khi đăng nhập Google: $e";
-    } finally {
       setState(() {
+        _error = e.toString();
         _isLoading = false;
       });
     }
@@ -134,49 +55,92 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Đăng nhập')),
-      body: _isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                children: [
-                  if (_error != null)
-                    Text(_error!, style: const TextStyle(color: Colors.red)),
-
-                  TextField(
-                    controller: _emailController,
-                    decoration: const InputDecoration(labelText: "Email"),
-                  ),
-                  TextField(
-                    controller: _passController,
-                    decoration: const InputDecoration(labelText: "Password"),
-                    obscureText: true,
-                  ),
-                  const SizedBox(height: 16),
-
-                  ElevatedButton(
-                    onPressed: _handleLogin,
-                    child: const Text("Login"),
-                  ),
-                  const SizedBox(height: 16),
-
-                  ElevatedButton.icon(
-                    icon: Image.asset(
-                      'assets/images/logo.png', // ví dụ icon google
-                      height: 24,
-                      width: 24,
-                    ),
-                    label: const Text("Login with Google"),
-                    onPressed: _handleGoogleLogin,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.black87,
-                    ),
-                  ),
-                ],
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/bg.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                "Welcome Back",
+                style: GoogleFonts.poppins(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue[800],
+                ),
+                textAlign: TextAlign.center,
               ),
-            ),
+              SizedBox(height: 8),
+              Text(
+                "Please sign in to continue.",
+                style: GoogleFonts.poppins(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.blue[600],
+                ),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 20),
+              TextField(
+                controller: _emailController,
+                decoration: InputDecoration(
+                  labelText: 'Email',
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                    borderSide: BorderSide.none, // Bỏ viền
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              TextField(
+                controller: _passController,
+                obscureText: true,
+                decoration: InputDecoration(
+                  labelText: 'Password',
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                    borderSide: BorderSide.none, // Bỏ viền
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: _isLoading ? null : _handleLogin,
+                child: Text(
+                  "LOG IN",
+                  style: GoogleFonts.poppins(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  padding: EdgeInsets.symmetric(vertical: 12),
+                  backgroundColor: Color(0xff4DA1A9),
+                ),
+              ),
+              if (_error != null) ...[
+                SizedBox(height: 20),
+                Text(_error!, style: TextStyle(color: Colors.red, fontSize: 14)),
+              ],
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

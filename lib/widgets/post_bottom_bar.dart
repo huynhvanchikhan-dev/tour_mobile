@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tour_booking/models/tour_model.dart';
 import 'package:intl/intl.dart';
+import 'package:tour_booking/screens/booking_screen.dart';
 import 'package:tour_booking/screens/full_screen_gallery.dart';
 
 class PostBottomBar extends StatelessWidget {
@@ -187,14 +188,23 @@ class PostBottomBar extends StatelessWidget {
                       BoxShadow(color: Colors.black26, blurRadius: 4),
                     ],
                   ),
-                  child: Text(
-                    "Book Now",
+                 
+                  child:  ElevatedButton(
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => BookingScreen(tour: tour,)));
+                    },
+                    child: Text(
+                    "Đặt ngay",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
+                  ),
+                      
+                  
+                  
                 ),
               ],
             ),

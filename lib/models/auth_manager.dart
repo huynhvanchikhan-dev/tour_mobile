@@ -84,4 +84,14 @@ class AuthManager with ChangeNotifier {
   bool _isTokenExpired(String token) {
     return JwtDecoder.isExpired(token);
   }
+
+//   void verifyAndLogin(String email, String code) async {
+//   try {
+//     final token = await userApi.verifyCode(email, code);
+//     await authManager.login(token);  // Đăng nhập và lưu token
+//     Navigator.of(context).pushReplacementNamed('/homeScreen');  // Chuyển đến màn hình chính
+//   } catch (e) {
+//     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: $e")));
+//   }
+// }
 }
