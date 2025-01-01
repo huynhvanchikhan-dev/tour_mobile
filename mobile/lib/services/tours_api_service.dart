@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:mobile/models/tour_model.dart';
+import 'package:tour_new_version/models/tour_model.dart';
 import 'package:http/http.dart' as http;
 
 class ToursApiService {

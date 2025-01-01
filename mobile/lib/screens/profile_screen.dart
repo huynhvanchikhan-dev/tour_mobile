@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
-import 'package:mobile/models/auth_manager.dart';
-import 'package:mobile/screens/home_screen.dart';
+import 'package:tour_new_version/models/auth_manager.dart';
+import 'package:tour_new_version/screens/home_screen.dart';
 
 import '../models/user_model.dart';
 import '../services/user_api_service.dart';

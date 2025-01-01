@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/models/tour_model.dart';
+import 'package:tour_new_version/models/tour_model.dart';
 import 'package:intl/intl.dart';
-import 'package:mobile/screens/booking_screen.dart';
-import 'package:mobile/screens/full_screen_gallery.dart';
+import 'package:tour_new_version/screens/booking_screen.dart';
+import 'package:tour_new_version/screens/full_screen_gallery.dart';
 
 class PostBottomBar extends StatelessWidget {
   final Tour tour;

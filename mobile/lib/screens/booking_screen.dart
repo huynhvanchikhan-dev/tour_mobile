@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
-import 'package:mobile/models/payment_request.dart';
-import 'package:mobile/models/tour_model.dart';
-import 'package:mobile/models/auth_manager.dart';
-import 'package:mobile/models/booking_request.dart';
-import 'package:mobile/repositories/payments.dart';
-import 'package:mobile/services/booking_api_service.dart';
-import 'package:mobile/services/user_api_service.dart';
-import 'package:mobile/models/user_model.dart';
+import 'package:tour_new_version/models/payment_request.dart';
+import 'package:tour_new_version/models/tour_model.dart';
+import 'package:tour_new_version/models/auth_manager.dart';
+import 'package:tour_new_version/models/booking_request.dart';
+import 'package:tour_new_version/repositories/payments.dart';
+import 'package:tour_new_version/services/booking_api_service.dart';
+import 'package:tour_new_version/services/user_api_service.dart';
+import 'package:tour_new_version/models/user_model.dart';
 
 
 class BookingScreen extends StatefulWidget {
@@ -41,10 +41,11 @@ class _BookingScreenState extends State<BookingScreen> {
 
   @override
   void initState() {
+    super.initState();
     if (Platform.isIOS) {
       eventChannel.receiveBroadcastStream().listen(_onEvent, onError: _onError);
     }
-    super.initState();
+    
     _fullNameController = TextEditingController();
     _phoneController = TextEditingController();
     _cinController = TextEditingController();
@@ -121,7 +122,7 @@ class _BookingScreenState extends State<BookingScreen> {
           ),
           token,
         );
-
+        print(bookingData.toString());
         if (bookingData.isNotEmpty) {
           String bookingId = bookingData['id'];
           print("bookingId $bookingId");
@@ -142,12 +143,27 @@ class _BookingScreenState extends State<BookingScreen> {
               zpTransToken = order.zptranstoken;
               showResult = true;
             });
+            
+            if(zpTransToken != null){
+              String response1 = "";
+              try {
+                final String result = await platform.invokeMethod('payOrder', {"zptoken": zpTransToken});
+                response1 = result;
+                print("payOrder Result: '$result'.");
+              } on PlatformException catch (e) {
+                print("Failed to Invoke: '${e.message}'.");
+                response1 = "Thanh toán thất bại";
+              }
+              print(response1);
+              setState(() {
+                payResult = response1;
+              });
+            }
           }
         }
       } catch (e) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Error processing booking: $e')),
-        );
+        
+        print("Error processing booking: $e");
       }
     }
   }

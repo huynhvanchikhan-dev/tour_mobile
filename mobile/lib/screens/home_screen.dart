@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/models/destination_model.dart';
-import 'package:mobile/models/tour_model.dart';
-import 'package:mobile/screens/fillter_soft_screen.dart';
-import 'package:mobile/screens/post_screen.dart';
-import 'package:mobile/services/destinations_api_service.dart';
-import 'package:mobile/services/tours_api_service.dart';
-import 'package:mobile/utils/api_base_config.dart';
-import 'package:mobile/widgets/home_app_bar.dart';
-import 'package:mobile/widgets/home_bottom_bar.dart';
+import 'package:tour_new_version/models/destination_model.dart';
+import 'package:tour_new_version/models/tour_model.dart';
+import 'package:tour_new_version/screens/fillter_soft_screen.dart';
+import 'package:tour_new_version/screens/post_screen.dart';
+import 'package:tour_new_version/services/destinations_api_service.dart';
+import 'package:tour_new_version/services/tours_api_service.dart';
+import 'package:tour_new_version/utils/api_base_config.dart';
+import 'package:tour_new_version/widgets/home_app_bar.dart';
+import 'package:tour_new_version/widgets/home_bottom_bar.dart';
 import 'package:intl/intl.dart';
 
 class HomeScreen extends StatefulWidget {

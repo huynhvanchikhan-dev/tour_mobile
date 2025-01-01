@@ -1,10 +1,11 @@
 import 'dart:convert';
 
 import 'package:sprintf/sprintf.dart';
-import 'package:mobile/models/create_order_response.dart';
-import 'package:mobile/models/payment_request.dart';
-import 'package:mobile/utils/endpoints.dart';
-import 'package:mobile/utils/util.dart' as utils;
+import 'package:tour_new_version/models/booking_request.dart';
+import 'package:tour_new_version/models/create_order_response.dart';
+import 'package:tour_new_version/models/payment_request.dart';
+import 'package:tour_new_version/utils/endpoints.dart';
+import 'package:tour_new_version/utils/util.dart' as utils;
 import 'package:http/http.dart' as http;
 import 'dart:async';
 

@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:mobile/models/booking_request.dart';
-import 'package:mobile/models/payment_request.dart';
+import 'package:tour_new_version/models/booking_request.dart';
+import 'package:tour_new_version/models/payment_request.dart';
 
 class BookingApiService {
   final String baseUrl;

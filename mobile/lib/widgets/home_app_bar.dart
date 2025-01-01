@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
-import 'package:mobile/models/auth_manager.dart';
-import 'package:mobile/screens/login_screen.dart';
-import 'package:mobile/screens/register_screen.dart';
+import 'package:tour_new_version/models/auth_manager.dart';
+import 'package:tour_new_version/screens/login_screen.dart';
+import 'package:tour_new_version/screens/register_screen.dart';
 
 class HomeAppBar extends StatefulWidget {
   const HomeAppBar({Key? key}) : super(key: key);

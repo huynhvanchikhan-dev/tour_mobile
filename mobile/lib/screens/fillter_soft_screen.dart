@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/widgets/fillter_app_bar.dart';
+import 'package:tour_new_version/widgets/fillter_app_bar.dart';
 
 class FillterSoftScreen extends StatelessWidget {
   // final String tourId;

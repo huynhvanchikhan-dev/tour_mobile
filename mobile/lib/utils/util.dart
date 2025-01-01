@@ -1,6 +1,6 @@
 // Function Format DateTime to String with layout string
 import 'dart:convert';
-import 'package:mobile/repositories/payments.dart';
+import 'package:tour_new_version/repositories/payments.dart';
 import 'package:intl/intl.dart';
 import 'package:sprintf/sprintf.dart';
 import 'package:crypto/crypto.dart';

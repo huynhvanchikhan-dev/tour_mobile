@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:mobile/models/destination_model.dart';
+import 'package:tour_new_version/models/destination_model.dart';
 
 class DestinationsApiService {
   final String baseUrl;

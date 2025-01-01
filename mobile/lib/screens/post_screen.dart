@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/models/tour_model.dart';
-import 'package:mobile/services/tours_api_service.dart';
-import 'package:mobile/widgets/post_app_bar.dart';
-import 'package:mobile/widgets/post_bottom_bar.dart';
+import 'package:tour_new_version/models/tour_model.dart';
+import 'package:tour_new_version/services/tours_api_service.dart';
+import 'package:tour_new_version/widgets/post_app_bar.dart';
+import 'package:tour_new_version/widgets/post_bottom_bar.dart';
 
 class PostScreen extends StatelessWidget {
   final String tourId;
