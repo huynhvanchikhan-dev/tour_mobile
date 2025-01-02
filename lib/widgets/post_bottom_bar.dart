@@ -177,34 +177,40 @@ class PostBottomBar extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 15,
-                    horizontal: 25,
-                  ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Colors.redAccent,
                     boxShadow: [
                       BoxShadow(color: Colors.black26, blurRadius: 4),
                     ],
                   ),
-                 
-                  child:  ElevatedButton(
-                    onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => BookingScreen(tour: tour,)));
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => BookingScreen(tour: tour),
+                        ),
+                      );
                     },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.redAccent, // Màu nền nút
+                      foregroundColor: Colors.white, // Màu chữ
+                      padding: EdgeInsets.symmetric(
+                          vertical: 18, horizontal: 30), // Cân đối padding
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10), // Bo góc nút
+                      ),
+                      elevation: 4, // Tăng hiệu ứng đổ bóng
+                    ),
                     child: Text(
-                    "Đặt ngay",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
+                      "Đặt ngay",
+                      style: TextStyle(
+                        fontSize: 18, // Cỡ chữ phù hợp hơn
+                        fontWeight: FontWeight.bold, // Chữ đậm để nổi bật hơn
+                        letterSpacing: 1.0, // Tăng khoảng cách chữ cho cân đối
+                      ),
                     ),
                   ),
-                  ),
-                      
-                  
-                  
                 ),
               ],
             ),

@@ -23,6 +23,25 @@
                     }
                 },
                 {
+                    "source": "/home/hock/Desktop/mobile/tour_booking/android/app/src/main/res/values/styles.xml",
+                    "from": {
+                        "startLines": "3,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "173,818",
+                        "endLines": "7,16",
+                        "endColumns": "12,12",
+                        "endOffsets": "476,982"
+                    },
+                    "to": {
+                        "startLines": "192,196",
+                        "startColumns": "4,4",
+                        "startOffsets": "11691,11872",
+                        "endLines": "195,198",
+                        "endColumns": "12,12",
+                        "endOffsets": "11867,12036"
+                    }
+                },
+                {
                     "source": "/home/hock/.gradle/caches/transforms-3/a1fd92b89d0c194f8fe8fdca4d20e2ee/transformed/jetified-startup-runtime-1.1.1/res/values/values.xml",
                     "from": {
                         "startLines": "2",
@@ -143,25 +162,6 @@
                         "startOffsets": "1933,1991,2057,2120,3116,3187,11337,11405,11472,11551",
                         "endColumns": "57,65,62,61,70,71,67,66,78,68",
                         "endOffsets": "1986,2052,2115,2177,3182,3254,11400,11467,11546,11615"
-                    }
-                },
-                {
-                    "source": "/home/hock/Desktop/flutter_new/tour_new_version/android/app/src/main/res/values/styles.xml",
-                    "from": {
-                        "startLines": "3,14",
-                        "startColumns": "4,4",
-                        "startOffsets": "173,818",
-                        "endLines": "7,16",
-                        "endColumns": "12,12",
-                        "endOffsets": "476,982"
-                    },
-                    "to": {
-                        "startLines": "192,196",
-                        "startColumns": "4,4",
-                        "startOffsets": "11691,11872",
-                        "endLines": "195,198",
-                        "endColumns": "12,12",
-                        "endOffsets": "11867,12036"
                     }
                 },
                 {

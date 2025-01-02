@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 import 'package:tour_new_version/models/auth_manager.dart';
+import 'package:tour_new_version/screens/booked_screen.dart';
 import 'package:tour_new_version/screens/home_screen.dart';
 
 import '../models/user_model.dart';
@@ -115,12 +116,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
     await context.read<AuthManager>().logout();
     // Quay về màn hình chính (HomeScreen)
     Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                HomeScreen(),
-                                          ),
-                                        );
+      context,
+      MaterialPageRoute(
+        builder: (context) => HomeScreen(),
+      ),
+    );
   }
 
   @override
@@ -146,7 +146,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Card(
                     elevation: 2,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 16, horizontal: 12),
                       child: Row(
                         children: [
                           ClipOval(
@@ -194,11 +195,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             alignment: Alignment.centerLeft,
                             child: Text(
                               "Thông tin cá nhân chi tiết",
-                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
                             ),
                           ),
                           const SizedBox(height: 16),
-
                           TextFormField(
                             controller: _usernameCtrl,
                             decoration: const InputDecoration(
@@ -207,7 +208,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                           ),
                           const SizedBox(height: 12),
-
                           TextFormField(
                             controller: _phoneCtrl,
                             decoration: const InputDecoration(
@@ -217,7 +217,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             keyboardType: TextInputType.phone,
                           ),
                           const SizedBox(height: 12),
-
                           TextFormField(
                             controller: _cinCtrl,
                             decoration: const InputDecoration(
@@ -227,7 +226,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             keyboardType: TextInputType.number,
                           ),
                           const SizedBox(height: 12),
-
                           TextFormField(
                             controller: _addressCtrl,
                             decoration: const InputDecoration(
@@ -236,7 +234,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                           ),
                           const SizedBox(height: 16),
-
                           Row(
                             children: [
                               Expanded(
@@ -260,14 +257,39 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ),
                   const SizedBox(height: 16),
-
-                  ElevatedButton(
-                    onPressed: _handleLogout,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red,
-                    ),
-                    child: const Text('Đăng xuất'),
-                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: ElevatedButton(
+                          onPressed: _handleLogout,
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.red,
+                            foregroundColor:
+                                Colors.white, // Đảm bảo chữ màu trắng
+                          ),
+                          child: const Text('Đăng xuất'),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const BookedScreen(),
+                              ),
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xff4DA1A9),
+                            foregroundColor: Colors.white, // Chữ màu trắng
+                          ),
+                          child: const Text('Lịch sử đặt tour'),
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
@@ -303,7 +325,8 @@ class _ChangePasswordDialogState extends State<ChangePasswordDialog> {
     setState(() => _isLoading = true);
 
     try {
-      final url = Uri.parse('http://192.168.1.5:8080/api/v2/users/change-password');
+      final url =
+          Uri.parse('http://192.168.1.5:8080/api/v2/users/change-password');
       final response = await http.post(
         url,
         headers: {
@@ -370,7 +393,7 @@ class _ChangePasswordDialogState extends State<ChangePasswordDialog> {
       ),
       actions: [
         TextButton(
-          onPressed: () => Navigator.of(context).pop(), 
+          onPressed: () => Navigator.of(context).pop(),
           child: const Text('Hủy'),
         ),
         ElevatedButton(

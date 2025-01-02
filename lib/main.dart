@@ -42,30 +42,3 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-
-// import 'package:flutter/material.dart';
-// import 'package:tour_new_version/testzalopay/dashboard.dart';
-
-
-// void main() => runApp(App());
-
-// class App extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: "Test",
-//       theme: ThemeData(
-//   brightness: Brightness.light,
-//   textTheme: TextTheme(
-//     bodyMedium: TextStyle(color: Colors.blue, fontSize: 18.0),
-//     headlineLarge: TextStyle(color: Colors.white),
-// ),
-//   fontFamily: 'Josefin Sans',
-//   primaryColor: Colors.blue,
-//   // scaffoldBackgroundColor: AppColor.primaryColor,
-// ),
-//       home: Dashboard(title: "Test", version: "v2"),
-//       debugShowCheckedModeBanner: false,
-//     );
-//   }
-// }

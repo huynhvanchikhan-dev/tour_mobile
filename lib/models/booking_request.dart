@@ -5,6 +5,7 @@ class BookingRequest {
   final int guestSize;
   final int amount;
   final String tour_id;
+  final String paymentMethod;
 
   BookingRequest({
     required this.fullname,
@@ -13,6 +14,7 @@ class BookingRequest {
     required this.guestSize,
     required this.amount,
     required this.tour_id,
+    required this.paymentMethod,
   });
 
   Map<String, dynamic> toJson() {
@@ -23,6 +25,7 @@ class BookingRequest {
       'guestSize': guestSize,
       'amount': amount,
       'tour_id': tour_id,
+      'paymentMethod': paymentMethod
     };
   }
 }

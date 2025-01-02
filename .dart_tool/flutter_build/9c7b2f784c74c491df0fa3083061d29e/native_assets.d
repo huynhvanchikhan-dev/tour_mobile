@@ -1,0 +1,1 @@
+ /home/hock/Desktop/mobile/tour_booking/.dart_tool/flutter_build/9c7b2f784c74c491df0fa3083061d29e/native_assets.yaml: 

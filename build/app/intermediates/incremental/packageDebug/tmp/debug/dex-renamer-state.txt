@@ -1,10 +1,10 @@
-#Thu Jan 02 00:31:44 ICT 2025
-base.0=/home/hock/Desktop/flutter_new/tour_new_version/build/app/intermediates/dex/debug/mergeExtDexDebug/classes.dex
-base.1=/home/hock/Desktop/flutter_new/tour_new_version/build/app/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
-base.2=/home/hock/Desktop/flutter_new/tour_new_version/build/app/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
-base.3=/home/hock/Desktop/flutter_new/tour_new_version/build/app/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex
-base.4=/home/hock/Desktop/flutter_new/tour_new_version/build/app/intermediates/dex/debug/mergeProjectDexDebug/2/classes.dex
-base.5=/home/hock/Desktop/flutter_new/tour_new_version/build/app/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
+#Thu Jan 02 18:30:01 ICT 2025
+base.0=/home/hock/Desktop/mobile/tour_booking/build/app/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+base.1=/home/hock/Desktop/mobile/tour_booking/build/app/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
+base.2=/home/hock/Desktop/mobile/tour_booking/build/app/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.3=/home/hock/Desktop/mobile/tour_booking/build/app/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex
+base.4=/home/hock/Desktop/mobile/tour_booking/build/app/intermediates/dex/debug/mergeProjectDexDebug/2/classes.dex
+base.5=/home/hock/Desktop/mobile/tour_booking/build/app/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=0/classes.dex

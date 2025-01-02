@@ -4,7 +4,7 @@
             "outputFile": "com.example.tour_new_version.app-mergeDebugResources-31:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/home/hock/Desktop/flutter_new/tour_new_version/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/home/hock/Desktop/mobile/tour_booking/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 import 'package:tour_new_version/models/payment_request.dart';
@@ -9,10 +10,10 @@ import 'package:tour_new_version/models/tour_model.dart';
 import 'package:tour_new_version/models/auth_manager.dart';
 import 'package:tour_new_version/models/booking_request.dart';
 import 'package:tour_new_version/repositories/payments.dart';
+import 'package:tour_new_version/screens/order_details_screen.dart';
 import 'package:tour_new_version/services/booking_api_service.dart';
 import 'package:tour_new_version/services/user_api_service.dart';
 import 'package:tour_new_version/models/user_model.dart';
-
 
 class BookingScreen extends StatefulWidget {
   final Tour tour;
@@ -45,7 +46,7 @@ class _BookingScreenState extends State<BookingScreen> {
     if (Platform.isIOS) {
       eventChannel.receiveBroadcastStream().listen(_onEvent, onError: _onError);
     }
-    
+
     _fullNameController = TextEditingController();
     _phoneController = TextEditingController();
     _cinController = TextEditingController();
@@ -113,13 +114,13 @@ class _BookingScreenState extends State<BookingScreen> {
             Provider.of<AuthManager>(context, listen: false).jwtToken ?? "";
         final bookingData = await bookingApiService.createBooking(
           BookingRequest(
-            fullname: _fullNameController.text,
-            phone: _phoneController.text,
-            cin: _cinController.text,
-            guestSize: _guestSize,
-            amount: _guestSize * widget.tour.price,
-            tour_id: widget.tour.id.toString(),
-          ),
+              fullname: _fullNameController.text,
+              phone: _phoneController.text,
+              cin: _cinController.text,
+              guestSize: _guestSize,
+              amount: _guestSize * widget.tour.price,
+              tour_id: widget.tour.id.toString(),
+              paymentMethod: "ZALOPAY"),
           token,
         );
         print(bookingData.toString());
@@ -133,37 +134,76 @@ class _BookingScreenState extends State<BookingScreen> {
               amount: _guestSize * widget.tour.price,
               order_id: "order_id",
               qrUrl: "qrUrl",
-              paymentMethod: "paymentMethod"));
-              print("booking respone: $order");
+              paymentMethod: "ZALOPAY"));
+          print("booking respone: $order");
           if (order != null) {
-            Navigator.pop(context);
-            zpTransToken = order.zptranstoken;
-            print("zpTransToken $zpTransToken'.");
-            setState(() {
-              zpTransToken = order.zptranstoken;
-              showResult = true;
-            });
-            
-            if(zpTransToken != null){
-              String response1 = "";
-              try {
-                final String result = await platform.invokeMethod('payOrder', {"zptoken": zpTransToken});
-                response1 = result;
-                print("payOrder Result: '$result'.");
-              } on PlatformException catch (e) {
-                print("Failed to Invoke: '${e.message}'.");
-                response1 = "Thanh toán thất bại";
-              }
-              print(response1);
-              setState(() {
-                payResult = response1;
-              });
+            try {
+              // Invoke ZaloPay payment
+              final result = await platform.invokeMethod(
+                'payOrder',
+                {"zptoken": order.zptranstoken},
+              );
+              // Handle successful payment
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => OrderDetailsScreen(
+                    bookingData: bookingData,
+                  ),
+                ),
+              );
+            } catch (e) {
+              // Handle payment failure
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => OrderDetailsScreen(
+                    bookingData: bookingData,
+                  ),
+                ),
+              );
             }
           }
         }
       } catch (e) {
-        
         print("Error processing booking: $e");
+      }
+    }
+  }
+
+  Future<void> _processDirectPayment() async {
+    if (_formKey.currentState!.validate()) {
+      try {
+        final bookingApiService =
+            Provider.of<BookingApiService>(context, listen: false);
+        final token =
+            Provider.of<AuthManager>(context, listen: false).jwtToken ?? "";
+
+        final bookingData = await bookingApiService.createBooking(
+          BookingRequest(
+              fullname: _fullNameController.text,
+              phone: _phoneController.text,
+              cin: _cinController.text,
+              guestSize: _guestSize,
+              amount: _guestSize * widget.tour.price,
+              tour_id: widget.tour.id.toString(),
+              paymentMethod: "NOTPAIED"),
+          token,
+        );
+
+        if (bookingData.isNotEmpty) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => OrderDetailsScreen(
+                bookingData: bookingData,
+              ),
+            ),
+          );
+        }
+      } catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Error processing direct payment: $e')));
       }
     }
   }
@@ -179,54 +219,172 @@ class _BookingScreenState extends State<BookingScreen> {
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(16.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              Text(
+                "Thông tin đặt tour",
+                style: GoogleFonts.poppins(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue[800],
+                ),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 50),
               TextFormField(
                 controller: _fullNameController,
-                decoration: InputDecoration(labelText: 'Họ và tên'),
+                decoration: InputDecoration(
+                  labelText: 'Họ và tên',
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                    borderSide: BorderSide.none,
+                  ),
+                ),
                 validator: (value) =>
                     value!.isEmpty ? 'Vui lòng nhập họ và tên' : null,
               ),
+              SizedBox(height: 30),
               TextFormField(
                 controller: _phoneController,
-                decoration: InputDecoration(labelText: 'Số điện thoại'),
+                decoration: InputDecoration(
+                  labelText: 'Số điện thoại',
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                    borderSide: BorderSide.none,
+                  ),
+                ),
                 validator: (value) =>
                     value!.isEmpty ? 'Vui lòng nhập số điện thoại' : null,
               ),
+              SizedBox(height: 30),
               TextFormField(
                 controller: _cinController,
-                decoration: InputDecoration(labelText: 'Số CMND/CCCD'),
+                decoration: InputDecoration(
+                  labelText: 'Số CMND/CCCD',
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                    borderSide: BorderSide.none,
+                  ),
+                ),
                 validator: (value) =>
                     value!.isEmpty ? 'Vui lòng nhập số CMND/CCCD' : null,
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 30),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Expanded(
-                    child: Text('Số người: $_guestSize'),
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.remove),
-                    onPressed: () {
+                  GestureDetector(
+                    onTap: () {
                       if (_guestSize > 1) {
                         setState(() {
                           _guestSize--;
                         });
                       }
                     },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Color(0xff4DA1A9), width: 2),
+                      ),
+                      padding: EdgeInsets.all(10),
+                      child: Icon(
+                        Icons.remove,
+                        color: Color(0xff4DA1A9),
+                      ),
+                    ),
                   ),
-                  IconButton(
-                    icon: Icon(Icons.add),
-                    onPressed: () {
+                  SizedBox(width: 20),
+                  Container(
+                    width: 80,
+                    height: 40,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text(
+                      '$_guestSize',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 20),
+                  GestureDetector(
+                    onTap: () {
                       setState(() {
                         _guestSize++;
                       });
                     },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Color(0xff4DA1A9), width: 2),
+                      ),
+                      padding: EdgeInsets.all(10),
+                      child: Icon(
+                        Icons.add,
+                        color: Color(0xff4DA1A9),
+                      ),
+                    ),
                   ),
                 ],
               ),
-              ElevatedButton(
-                onPressed: _processBooking,
-                child: Text('Đặt Tour Ngay'),
+              SizedBox(height: 50),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: _processBooking,
+                      child: Text(
+                        'ZaloPay',
+                        style: GoogleFonts.poppins(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        padding: EdgeInsets.symmetric(vertical: 12),
+                        backgroundColor:
+                            Color(0xff4DA1A9), // Nền giống LoginScreen
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: _processDirectPayment,
+                      child: Text(
+                        'Thanh toán trực tiếp',
+                        style: GoogleFonts.poppins(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        padding: EdgeInsets.symmetric(vertical: 12),
+                        backgroundColor:
+                            Color(0xff4DA1A9), // Nền giống LoginScreen
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
