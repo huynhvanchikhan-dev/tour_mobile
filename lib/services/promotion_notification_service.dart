@@ -33,7 +33,7 @@ class PromotionNotificationService {
     // Lắng nghe thông báo từ WebSocket
     _channel.stream.listen((message) {
       final data = jsonDecode(message);
-      _showNotification(data['title'], data['content']);
+      _showNotification(data['conditions'], data['code']);
     });
   }
 

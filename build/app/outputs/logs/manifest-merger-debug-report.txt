@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 application
-INJECTED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:6:5-37:19
+INJECTED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:7:5-38:19
 INJECTED from /home/hock/Desktop/mobile/tour_booking/android/app/src/debug/AndroidManifest.xml
 MERGED from [:geolocator_android] /home/hock/Desktop/mobile/tour_booking/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [:geolocator_android] /home/hock/Desktop/mobile/tour_booking/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-13:19
@@ -37,8 +37,8 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/hock/
 	android:name
 		INJECTED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml
 manifest
-ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:1:1-49:12
-MERGED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:1:1-49:12
+ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:1:1-50:12
+MERGED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:1:1-50:12
 INJECTED from /home/hock/Desktop/mobile/tour_booking/android/app/src/debug/AndroidManifest.xml:1:1-7:12
 INJECTED from /home/hock/Desktop/mobile/tour_booking/android/app/src/debug/AndroidManifest.xml:1:1-7:12
 INJECTED from /home/hock/Desktop/mobile/tour_booking/android/app/src/debug/AndroidManifest.xml:1:1-7:12
@@ -49,6 +49,7 @@ MERGED from [:geocoding_android] /home/hock/Desktop/mobile/tour_booking/build/ge
 MERGED from [:geolocator_android] /home/hock/Desktop/mobile/tour_booking/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-15:12
 MERGED from [:google_sign_in_android] /home/hock/Desktop/mobile/tour_booking/build/google_sign_in_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:path_provider_android] /home/hock/Desktop/mobile/tour_booking/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:permission_handler_android] /home/hock/Desktop/mobile/tour_booking/build/permission_handler_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:url_launcher_android] /home/hock/Desktop/mobile/tour_booking/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-14:12
 MERGED from [com.google.android.gms:play-services-location:21.2.0] /home/hock/.gradle/caches/transforms-3/062a0e0b197545c8dac64c951de02bc9/transformed/jetified-play-services-location-21.2.0/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.compose.runtime:runtime-saved-instance-state:1.0.0-alpha11] /home/hock/.gradle/caches/transforms-3/3e11fe5dfdf0217d1cbd4b721b85e6a0/transformed/jetified-runtime-saved-instance-state-1.0.0-alpha11/AndroidManifest.xml:17:1-24:12
@@ -109,18 +110,24 @@ uses-permission#android.permission.ACCESS_BACKGROUND_LOCATION
 ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:5:5-84
 	android:name
 		ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:5:22-82
-queries
-ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:43:5-48:15
-intent#action:name:android.intent.action.PROCESS_TEXT+data:mimeType:text/plain
-ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:44:9-47:18
-action#android.intent.action.PROCESS_TEXT
-ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:45:13-72
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:6:5-77
+MERGED from [:flutter_local_notifications] /home/hock/Desktop/mobile/tour_booking/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:8:5-77
+MERGED from [:flutter_local_notifications] /home/hock/Desktop/mobile/tour_booking/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:8:5-77
 	android:name
-		ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:45:21-70
+		ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:6:22-74
+queries
+ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:44:5-49:15
+intent#action:name:android.intent.action.PROCESS_TEXT+data:mimeType:text/plain
+ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:45:9-48:18
+action#android.intent.action.PROCESS_TEXT
+ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:46:13-72
+	android:name
+		ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:46:21-70
 data
-ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:46:13-50
+ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:47:13-50
 	android:mimeType
-		ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:46:19-48
+		ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:47:19-48
 uses-permission#android.permission.INTERNET
 ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/debug/AndroidManifest.xml:6:5-66
 MERGED from [:google_sign_in_android] /home/hock/Desktop/mobile/tour_booking/build/google_sign_in_android/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-67
@@ -145,6 +152,8 @@ MERGED from [:google_sign_in_android] /home/hock/Desktop/mobile/tour_booking/bui
 MERGED from [:google_sign_in_android] /home/hock/Desktop/mobile/tour_booking/build/google_sign_in_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:path_provider_android] /home/hock/Desktop/mobile/tour_booking/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:path_provider_android] /home/hock/Desktop/mobile/tour_booking/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:permission_handler_android] /home/hock/Desktop/mobile/tour_booking/build/permission_handler_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:permission_handler_android] /home/hock/Desktop/mobile/tour_booking/build/permission_handler_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:url_launcher_android] /home/hock/Desktop/mobile/tour_booking/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:url_launcher_android] /home/hock/Desktop/mobile/tour_booking/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-location:21.2.0] /home/hock/.gradle/caches/transforms-3/062a0e0b197545c8dac64c951de02bc9/transformed/jetified-play-services-location-21.2.0/AndroidManifest.xml:5:5-44
@@ -239,10 +248,6 @@ uses-permission#android.permission.VIBRATE
 ADDED from [:flutter_local_notifications] /home/hock/Desktop/mobile/tour_booking/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-66
 	android:name
 		ADDED from [:flutter_local_notifications] /home/hock/Desktop/mobile/tour_booking/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:7:22-63
-uses-permission#android.permission.POST_NOTIFICATIONS
-ADDED from [:flutter_local_notifications] /home/hock/Desktop/mobile/tour_booking/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:8:5-77
-	android:name
-		ADDED from [:flutter_local_notifications] /home/hock/Desktop/mobile/tour_booking/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:8:22-74
 service#com.baseflow.geolocator.GeolocatorLocationService
 ADDED from [:geolocator_android] /home/hock/Desktop/mobile/tour_booking/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-12:56
 	android:enabled
