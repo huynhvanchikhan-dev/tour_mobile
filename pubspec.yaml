@@ -53,6 +53,7 @@ dependencies:
   permission_handler: ^11.3.1
   stomp_dart_client: ^2.1.1
   shared_preferences: ^2.3.5
+  flutter_launcher_icons: ^0.14.2
   
 
 dev_dependencies:

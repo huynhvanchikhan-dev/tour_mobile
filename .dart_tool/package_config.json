@@ -2,6 +2,12 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "archive",
+      "rootUri": "file:///home/hock/.pub-cache/hosted/pub.dev/archive-4.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "args",
       "rootUri": "file:///home/hock/.pub-cache/hosted/pub.dev/args-2.6.0",
       "packageUri": "lib/",
@@ -24,6 +30,18 @@
       "rootUri": "file:///home/hock/.pub-cache/hosted/pub.dev/characters-1.3.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "checked_yaml",
+      "rootUri": "file:///home/hock/.pub-cache/hosted/pub.dev/checked_yaml-2.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "cli_util",
+      "rootUri": "file:///home/hock/.pub-cache/hosted/pub.dev/cli_util-0.4.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
     },
     {
       "name": "clock",
@@ -90,6 +108,12 @@
       "rootUri": "file:///opt/flutter/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "3.3"
+    },
+    {
+      "name": "flutter_launcher_icons",
+      "rootUri": "file:///home/hock/.pub-cache/hosted/pub.dev/flutter_launcher_icons-0.14.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
     },
     {
       "name": "flutter_lints",
@@ -278,6 +302,12 @@
       "languageVersion": "3.4"
     },
     {
+      "name": "image",
+      "rootUri": "file:///home/hock/.pub-cache/hosted/pub.dev/image-4.5.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "intl",
       "rootUri": "file:///home/hock/.pub-cache/hosted/pub.dev/intl-0.18.1",
       "packageUri": "lib/",
@@ -288,6 +318,12 @@
       "rootUri": "file:///home/hock/.pub-cache/hosted/pub.dev/js-0.6.7",
       "packageUri": "lib/",
       "languageVersion": "2.19"
+    },
+    {
+      "name": "json_annotation",
+      "rootUri": "file:///home/hock/.pub-cache/hosted/pub.dev/json_annotation-4.9.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
     },
     {
       "name": "jwt_decoder",
@@ -442,6 +478,12 @@
     {
       "name": "plugin_platform_interface",
       "rootUri": "file:///home/hock/.pub-cache/hosted/pub.dev/plugin_platform_interface-2.1.8",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "posix",
+      "rootUri": "file:///home/hock/.pub-cache/hosted/pub.dev/posix-6.0.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -662,13 +704,19 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "yaml",
+      "rootUri": "file:///home/hock/.pub-cache/hosted/pub.dev/yaml-3.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
       "name": "tour_new_version",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.6"
     }
   ],
-  "generated": "2025-01-05T10:08:53.325003Z",
+  "generated": "2025-01-05T10:24:23.983702Z",
   "generator": "pub",
   "generatorVersion": "3.6.0",
   "flutterRoot": "file:///opt/flutter",
