@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:tour_new_version/models/auth_manager.dart';
 import 'package:tour_new_version/screens/welcome_screen.dart';
 import 'package:tour_new_version/services/booking_api_service.dart';
+import 'package:tour_new_version/services/promotion_notification_service.dart';
 import 'package:tour_new_version/services/user_api_service.dart';
 
 void main() {
@@ -17,6 +18,7 @@ void main() {
       child: MyApp(),
     ),
   );
+  PromotionNotificationService();
 }
 
 class MyApp extends StatefulWidget{

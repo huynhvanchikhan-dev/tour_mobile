@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 application
-INJECTED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:2:5-33:19
+INJECTED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:6:5-37:19
 INJECTED from /home/hock/Desktop/mobile/tour_booking/android/app/src/debug/AndroidManifest.xml
 MERGED from [:geolocator_android] /home/hock/Desktop/mobile/tour_booking/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [:geolocator_android] /home/hock/Desktop/mobile/tour_booking/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-13:19
@@ -37,12 +37,13 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/hock/
 	android:name
 		INJECTED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml
 manifest
-ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:1:1-45:12
-MERGED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:1:1-45:12
+ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:1:1-49:12
+MERGED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:1:1-49:12
 INJECTED from /home/hock/Desktop/mobile/tour_booking/android/app/src/debug/AndroidManifest.xml:1:1-7:12
 INJECTED from /home/hock/Desktop/mobile/tour_booking/android/app/src/debug/AndroidManifest.xml:1:1-7:12
 INJECTED from /home/hock/Desktop/mobile/tour_booking/android/app/src/debug/AndroidManifest.xml:1:1-7:12
 MERGED from [zpdk-release-28052021.aar] /home/hock/.gradle/caches/transforms-3/b8126c8819e2ef4e3bbecdeaf1948d8c/transformed/jetified-zpdk-release-28052021/AndroidManifest.xml:2:1-13:12
+MERGED from [:flutter_local_notifications] /home/hock/Desktop/mobile/tour_booking/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-10:12
 MERGED from [:flutter_secure_storage] /home/hock/Desktop/mobile/tour_booking/build/flutter_secure_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-10:12
 MERGED from [:geocoding_android] /home/hock/Desktop/mobile/tour_booking/build/geocoding_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:geolocator_android] /home/hock/Desktop/mobile/tour_booking/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-15:12
@@ -53,6 +54,7 @@ MERGED from [com.google.android.gms:play-services-location:21.2.0] /home/hock/.g
 MERGED from [androidx.compose.runtime:runtime-saved-instance-state:1.0.0-alpha11] /home/hock/.gradle/caches/transforms-3/3e11fe5dfdf0217d1cbd4b721b85e6a0/transformed/jetified-runtime-saved-instance-state-1.0.0-alpha11/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.compose.ui:ui-util:1.0.0-alpha11] /home/hock/.gradle/caches/transforms-3/8c78999955414267040c275f9838b606/transformed/jetified-ui-util-1.0.0-alpha11/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.compose.runtime:runtime:1.0.0-alpha11] /home/hock/.gradle/caches/transforms-3/821f31b75e3af8ef1bf3956c9c3d0847/transformed/jetified-runtime-1.0.0-alpha11/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.media:media:1.1.0] /home/hock/.gradle/caches/transforms-3/07b47b454deb98a7092e3e2891f674ce/transformed/media-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.browser:browser:1.8.0] /home/hock/.gradle/caches/transforms-3/7f6d20225ac1174a3efad96609161b97/transformed/browser-1.8.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.window:window:1.2.0] /home/hock/.gradle/caches/transforms-3/8859fd2468ade3ef2655d1f63d6737f2/transformed/jetified-window-1.2.0/AndroidManifest.xml:17:1-31:12
 MERGED from [androidx.window:window-java:1.2.0] /home/hock/.gradle/caches/transforms-3/8a650b2c5ea333036303d473a939db42/transformed/jetified-window-java-1.2.0/AndroidManifest.xml:17:1-21:12
@@ -95,18 +97,30 @@ MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] /home/hock/.gradle/caches/
 		INJECTED from /home/hock/Desktop/mobile/tour_booking/android/app/src/debug/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:1:11-69
-queries
-ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:39:5-44:15
-intent#action:name:android.intent.action.PROCESS_TEXT+data:mimeType:text/plain
-ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:40:9-43:18
-action#android.intent.action.PROCESS_TEXT
-ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:41:13-72
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:3:5-78
 	android:name
-		ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:41:21-70
+		ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:3:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:4:5-80
+	android:name
+		ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:4:22-78
+uses-permission#android.permission.ACCESS_BACKGROUND_LOCATION
+ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:5:5-84
+	android:name
+		ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:5:22-82
+queries
+ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:43:5-48:15
+intent#action:name:android.intent.action.PROCESS_TEXT+data:mimeType:text/plain
+ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:44:9-47:18
+action#android.intent.action.PROCESS_TEXT
+ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:45:13-72
+	android:name
+		ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:45:21-70
 data
-ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:42:13-50
+ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:46:13-50
 	android:mimeType
-		ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:42:19-48
+		ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:46:19-48
 uses-permission#android.permission.INTERNET
 ADDED from /home/hock/Desktop/mobile/tour_booking/android/app/src/debug/AndroidManifest.xml:6:5-66
 MERGED from [:google_sign_in_android] /home/hock/Desktop/mobile/tour_booking/build/google_sign_in_android/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-67
@@ -119,6 +133,8 @@ INJECTED from /home/hock/Desktop/mobile/tour_booking/android/app/src/debug/Andro
 INJECTED from /home/hock/Desktop/mobile/tour_booking/android/app/src/debug/AndroidManifest.xml
 MERGED from [zpdk-release-28052021.aar] /home/hock/.gradle/caches/transforms-3/b8126c8819e2ef4e3bbecdeaf1948d8c/transformed/jetified-zpdk-release-28052021/AndroidManifest.xml:7:5-9:39
 MERGED from [zpdk-release-28052021.aar] /home/hock/.gradle/caches/transforms-3/b8126c8819e2ef4e3bbecdeaf1948d8c/transformed/jetified-zpdk-release-28052021/AndroidManifest.xml:7:5-9:39
+MERGED from [:flutter_local_notifications] /home/hock/Desktop/mobile/tour_booking/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_local_notifications] /home/hock/Desktop/mobile/tour_booking/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:flutter_secure_storage] /home/hock/Desktop/mobile/tour_booking/build/flutter_secure_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:6:5-8:53
 MERGED from [:flutter_secure_storage] /home/hock/Desktop/mobile/tour_booking/build/flutter_secure_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:6:5-8:53
 MERGED from [:geocoding_android] /home/hock/Desktop/mobile/tour_booking/build/geocoding_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
@@ -139,6 +155,8 @@ MERGED from [androidx.compose.ui:ui-util:1.0.0-alpha11] /home/hock/.gradle/cache
 MERGED from [androidx.compose.ui:ui-util:1.0.0-alpha11] /home/hock/.gradle/caches/transforms-3/8c78999955414267040c275f9838b606/transformed/jetified-ui-util-1.0.0-alpha11/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.compose.runtime:runtime:1.0.0-alpha11] /home/hock/.gradle/caches/transforms-3/821f31b75e3af8ef1bf3956c9c3d0847/transformed/jetified-runtime-1.0.0-alpha11/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.compose.runtime:runtime:1.0.0-alpha11] /home/hock/.gradle/caches/transforms-3/821f31b75e3af8ef1bf3956c9c3d0847/transformed/jetified-runtime-1.0.0-alpha11/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media:media:1.1.0] /home/hock/.gradle/caches/transforms-3/07b47b454deb98a7092e3e2891f674ce/transformed/media-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media:media:1.1.0] /home/hock/.gradle/caches/transforms-3/07b47b454deb98a7092e3e2891f674ce/transformed/media-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.browser:browser:1.8.0] /home/hock/.gradle/caches/transforms-3/7f6d20225ac1174a3efad96609161b97/transformed/browser-1.8.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.browser:browser:1.8.0] /home/hock/.gradle/caches/transforms-3/7f6d20225ac1174a3efad96609161b97/transformed/browser-1.8.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.window:window:1.2.0] /home/hock/.gradle/caches/transforms-3/8859fd2468ade3ef2655d1f63d6737f2/transformed/jetified-window-1.2.0/AndroidManifest.xml:20:5-44
@@ -217,6 +235,14 @@ uses-permission#android.permission.QUERY_ALL_PACKAGES
 ADDED from [zpdk-release-28052021.aar] /home/hock/.gradle/caches/transforms-3/b8126c8819e2ef4e3bbecdeaf1948d8c/transformed/jetified-zpdk-release-28052021/AndroidManifest.xml:11:5-77
 	android:name
 		ADDED from [zpdk-release-28052021.aar] /home/hock/.gradle/caches/transforms-3/b8126c8819e2ef4e3bbecdeaf1948d8c/transformed/jetified-zpdk-release-28052021/AndroidManifest.xml:11:22-74
+uses-permission#android.permission.VIBRATE
+ADDED from [:flutter_local_notifications] /home/hock/Desktop/mobile/tour_booking/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-66
+	android:name
+		ADDED from [:flutter_local_notifications] /home/hock/Desktop/mobile/tour_booking/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:7:22-63
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from [:flutter_local_notifications] /home/hock/Desktop/mobile/tour_booking/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:8:5-77
+	android:name
+		ADDED from [:flutter_local_notifications] /home/hock/Desktop/mobile/tour_booking/build/flutter_local_notifications/intermediates/merged_manifest/debug/AndroidManifest.xml:8:22-74
 service#com.baseflow.geolocator.GeolocatorLocationService
 ADDED from [:geolocator_android] /home/hock/Desktop/mobile/tour_booking/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-12:56
 	android:enabled

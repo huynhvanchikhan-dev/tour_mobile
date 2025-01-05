@@ -326,7 +326,7 @@ class _ChangePasswordDialogState extends State<ChangePasswordDialog> {
 
     try {
       final url =
-          Uri.parse('http://192.168.1.5:8080/api/v2/users/change-password');
+          Uri.parse('http://54.252.193.168:8080/api/v2/users/change-password');
       final response = await http.post(
         url,
         headers: {

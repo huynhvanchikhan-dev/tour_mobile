@@ -2,6 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>We use this permission to send you important notifications about promotions.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Bật vị trí để chúng tôi gợi ý những chuyến đi thú vị cho bạn</string>
 	<key>CFBundleDevelopmentRegion</key>
