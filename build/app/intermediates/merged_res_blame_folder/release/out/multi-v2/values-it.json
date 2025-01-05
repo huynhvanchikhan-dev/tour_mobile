@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.tour_new_version.app-mergeReleaseResources-31:/values-it/values-it.xml",
+            "outputFile": "com.example.tour_new_version.app-mergeReleaseResources-32:/values-it/values-it.xml",
             "map": [
                 {
                     "source": "/home/hock/.gradle/caches/transforms-3/7f6d20225ac1174a3efad96609161b97/transformed/browser-1.8.0/res/values-it/values-it.xml",

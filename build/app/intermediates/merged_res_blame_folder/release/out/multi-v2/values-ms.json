@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.tour_new_version.app-mergeReleaseResources-31:/values-ms/values-ms.xml",
+            "outputFile": "com.example.tour_new_version.app-mergeReleaseResources-32:/values-ms/values-ms.xml",
             "map": [
                 {
                     "source": "/home/hock/.gradle/caches/transforms-3/aa568bf11239b6a9b2866fb2d7c8f9fe/transformed/jetified-play-services-basement-18.3.0/res/values-ms/values.xml",

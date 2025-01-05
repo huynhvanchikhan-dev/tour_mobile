@@ -17,6 +17,19 @@
       jars="/home/hock/Desktop/mobile/tour_booking/build/app/intermediates/flutter/release/libs.jar"
       resolved="__local_aars__:/home/hock/Desktop/mobile/tour_booking/build/app/intermediates/flutter/release/libs.jar:unspecified"/>
   <library
+      name="/home/hock/Desktop/mobile/tour_booking/android@@:flutter_local_notifications::release"
+      jars="/home/hock/Desktop/mobile/tour_booking/build/flutter_local_notifications/.transforms/fdde0b06391b5fecdc8418211825e98e/transformed/out/jars/classes.jar:/home/hock/Desktop/mobile/tour_booking/build/flutter_local_notifications/.transforms/fdde0b06391b5fecdc8418211825e98e/transformed/out/jars/libs/R.jar"
+      resolved="com.dexterous.flutterlocalnotifications:flutter_local_notifications:unspecified"
+      folder="/home/hock/Desktop/mobile/tour_booking/build/flutter_local_notifications/.transforms/fdde0b06391b5fecdc8418211825e98e/transformed/out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="/home/hock/Desktop/mobile/tour_booking/android@@:flutter_secure_storage::release"
       jars="/home/hock/Desktop/mobile/tour_booking/build/flutter_secure_storage/.transforms/0291ec4aa56b5e3f81fa3997ae6b7530/transformed/out/jars/classes.jar:/home/hock/Desktop/mobile/tour_booking/build/flutter_secure_storage/.transforms/0291ec4aa56b5e3f81fa3997ae6b7530/transformed/out/jars/libs/R.jar"
       resolved="com.it_nomads.fluttersecurestorage:flutter_secure_storage:unspecified"
@@ -73,6 +86,19 @@
       jars="/home/hock/Desktop/mobile/tour_booking/build/path_provider_android/.transforms/669356ac3bf3f883b9f95a07a201e802/transformed/out/jars/classes.jar:/home/hock/Desktop/mobile/tour_booking/build/path_provider_android/.transforms/669356ac3bf3f883b9f95a07a201e802/transformed/out/jars/libs/R.jar"
       resolved="io.flutter.plugins.pathprovider:path_provider_android:unspecified"
       folder="/home/hock/Desktop/mobile/tour_booking/build/path_provider_android/.transforms/669356ac3bf3f883b9f95a07a201e802/transformed/out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="/home/hock/Desktop/mobile/tour_booking/android@@:permission_handler_android::release"
+      jars="/home/hock/Desktop/mobile/tour_booking/build/permission_handler_android/.transforms/1bf83e355afb545e9ec9d762cef446c0/transformed/out/jars/classes.jar:/home/hock/Desktop/mobile/tour_booking/build/permission_handler_android/.transforms/1bf83e355afb545e9ec9d762cef446c0/transformed/out/jars/libs/R.jar"
+      resolved="com.baseflow.permissionhandler:permission_handler_android:unspecified"
+      folder="/home/hock/Desktop/mobile/tour_booking/build/permission_handler_android/.transforms/1bf83e355afb545e9ec9d762cef446c0/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -480,6 +506,19 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="androidx.media:media:1.1.0@aar"
+      jars="/home/hock/.gradle/caches/transforms-3/07b47b454deb98a7092e3e2891f674ce/transformed/media-1.1.0/jars/classes.jar"
+      resolved="androidx.media:media:1.1.0"
+      folder="/home/hock/.gradle/caches/transforms-3/07b47b454deb98a7092e3e2891f674ce/transformed/media-1.1.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="androidx.browser:browser:1.8.0@aar"
       jars="/home/hock/.gradle/caches/transforms-3/7f6d20225ac1174a3efad96609161b97/transformed/browser-1.8.0/jars/classes.jar"
       resolved="androidx.browser:browser:1.8.0"
@@ -657,13 +696,17 @@
       jars="/home/hock/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-collections-immutable-jvm/0.3/dd36423a37666db520efe646bb0aa0ddea3b5b96/kotlinx-collections-immutable-jvm-0.3.jar"
       resolved="org.jetbrains.kotlinx:kotlinx-collections-immutable-jvm:0.3"/>
   <library
-      name="com.google.guava:guava:33.3.1-android@jar"
-      jars="/home/hock/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/33.3.1-android/36162b3b4e9df67dae90db62a2c54616ca42c1bd/guava-33.3.1-android.jar"
-      resolved="com.google.guava:guava:33.3.1-android"/>
-  <library
       name="com.google.crypto.tink:tink-android:1.8.0@jar"
       jars="/home/hock/.gradle/caches/modules-2/files-2.1/com.google.crypto.tink/tink-android/1.8.0/bda82b49568d444a3b54773ca5aa487816473295/tink-android-1.8.0.jar"
       resolved="com.google.crypto.tink:tink-android:1.8.0"/>
+  <library
+      name="com.google.code.gson:gson:2.8.9@jar"
+      jars="/home/hock/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.9/8a432c1d6825781e21a02db2e2c33c5fde2833b9/gson-2.8.9.jar"
+      resolved="com.google.code.gson:gson:2.8.9"/>
+  <library
+      name="com.google.guava:guava:33.3.1-android@jar"
+      jars="/home/hock/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/33.3.1-android/36162b3b4e9df67dae90db62a2c54616ca42c1bd/guava-33.3.1-android.jar"
+      resolved="com.google.guava:guava:33.3.1-android"/>
   <library
       name="com.google.guava:failureaccess:1.0.2@jar"
       jars="/home/hock/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.2/c4a06a64e650562f30b7bf9aaec1bfed43aca12b/failureaccess-1.0.2.jar"
@@ -688,8 +731,4 @@
       name="com.google.j2objc:j2objc-annotations:3.0.0@jar"
       jars="/home/hock/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/3.0.0/7399e65dd7e9ff3404f4535b2f017093bdb134c7/j2objc-annotations-3.0.0.jar"
       resolved="com.google.j2objc:j2objc-annotations:3.0.0"/>
-  <library
-      name="com.google.code.gson:gson:2.8.9@jar"
-      jars="/home/hock/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.9/8a432c1d6825781e21a02db2e2c33c5fde2833b9/gson-2.8.9.jar"
-      resolved="com.google.code.gson:gson:2.8.9"/>
 </libraries>

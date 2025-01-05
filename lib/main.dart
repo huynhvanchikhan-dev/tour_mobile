@@ -14,6 +14,10 @@ void main() {
         Provider<BookingApiService>(create: (_) => BookingApiService(baseUrl: 'http://54.252.193.168:8080')),
         ChangeNotifierProvider(create: (_) => AuthManager()),
         Provider<UserApiService>(create: (_) => UserApiService(baseUrl: 'http://54.252.193.168:8080')),
+        Provider<PromotionNotificationService>(
+          create: (_) => PromotionNotificationService(),
+          dispose: (_, service) => service.dispose(),
+        ),
       ],
       child: MyApp(),
     ),
