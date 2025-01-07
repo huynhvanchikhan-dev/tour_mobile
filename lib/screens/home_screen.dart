@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
       final destinationsFuture = _destinationsApiService.fetchDestinations();
       final toursFuture = _toursApiService.fetchTours();
       // Chờ cả hai future cùng hoàn thành
-      
+
       return await Future.wait([destinationsFuture, toursFuture]);
     } catch (e) {
       // Bắt lỗi tại đây (mất mạng, server error, v.v.)
@@ -66,14 +66,14 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         // Thêm RefreshIndicator bọc quanh FutureBuilder
         child: RefreshIndicator(
-          onRefresh: _onRefresh, 
+          onRefresh: _onRefresh,
           child: FutureBuilder<List<dynamic>>(
             future: _dataFuture,
             builder: (context, snapshot) {
               // Đang chờ dữ liệu
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const Center(child: CircularProgressIndicator());
-              } 
+              }
               // Nếu có lỗi
               else if (snapshot.hasError) {
                 String error = snapshot.error.toString();
@@ -84,13 +84,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       Text(error),
                       const SizedBox(height: 8),
                       ElevatedButton(
-                        onPressed: _onRefresh, 
+                        onPressed: _onRefresh,
                         child: const Text('Thử lại'),
                       ),
                     ],
                   ),
                 );
-              } 
+              }
               // Không có dữ liệu
               else if (!snapshot.hasData || snapshot.data!.isEmpty) {
                 return const Center(child: Text('Không có dữ liệu'));
@@ -119,11 +119,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         final destination = destinations[index];
                         return InkWell(
                           onTap: () {
-                            // Xử lý khi nhấn vào destination
+                            // Pass the destination ID to the FillterSoftScreen
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => FillterSoftScreen(),
+                                builder: (context) => FillterSoftScreen(
+                                    destinationId:
+                                        destination.id), // Pass the ID here
                               ),
                             );
                           },
