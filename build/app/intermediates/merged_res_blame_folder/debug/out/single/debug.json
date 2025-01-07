@@ -1,5 +1,49 @@
 [
     {
+        "merged": "com.example.tour_new_version.app-merged_res-49:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.tour_new_version.app-main-44:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/home/hock/.gradle/daemon/8.3/com.example.tour_new_version.app-merged_res-49:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/home/hock/.gradle/daemon/8.3/com.example.tour_new_version.app-main-44:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/hock/.gradle/daemon/8.3/com.example.tour_new_version.app-merged_res-49:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/home/hock/.gradle/daemon/8.3/com.example.tour_new_version.app-main-44:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.tour_new_version.app-merged_res-49:/drawable-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.tour_new_version.app-main-44:/drawable-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.tour_new_version.app-merged_res-49:/drawable-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "com.example.tour_new_version.app-main-44:/drawable-xxxhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.example.tour_new_version.app-merged_res-49:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.example.tour_new_version.app-main-44:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.tour_new_version.app-merged_res-49:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.example.tour_new_version.app-main-44:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.tour_new_version.app-merged_res-49:/drawable-xxhdpi_ic_launcher_background.png.flat",
+        "source": "com.example.tour_new_version.app-main-44:/drawable-xxhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.example.tour_new_version.app-merged_res-49:/drawable-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.tour_new_version.app-main-44:/drawable-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.tour_new_version.app-merged_res-49:/drawable-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.tour_new_version.app-main-44:/drawable-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/home/hock/.gradle/daemon/8.3/com.example.tour_new_version.app-merged_res-49:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/home/hock/.gradle/daemon/8.3/com.example.tour_new_version.app-main-44:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
         "merged": "com.example.tour_new_version.app-merged_res-49:/mipmap-mdpi_ic_launcher.png.flat",
         "source": "com.example.tour_new_version.app-main-44:/mipmap-mdpi/ic_launcher.png"
     },
@@ -12,15 +56,35 @@
         "source": "com.example.tour_new_version.app-main-44:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.tour_new_version.app-merged_res-49:/drawable-v21_launch_background.xml.flat",
-        "source": "com.example.tour_new_version.app-main-44:/drawable-v21/launch_background.xml"
+        "merged": "com.example.tour_new_version.app-merged_res-49:/drawable-mdpi_ic_launcher_background.png.flat",
+        "source": "com.example.tour_new_version.app-main-44:/drawable-mdpi/ic_launcher_background.png"
     },
     {
-        "merged": "com.example.tour_new_version.app-merged_res-49:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.example.tour_new_version.app-main-44:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "/home/hock/.gradle/daemon/8.3/com.example.tour_new_version.app-merged_res-49:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/home/hock/.gradle/daemon/8.3/com.example.tour_new_version.app-main-44:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.tour_new_version.app-merged_res-49:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.example.tour_new_version.app-main-44:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.example.tour_new_version.app-merged_res-49:/drawable-hdpi_ic_launcher_background.png.flat",
+        "source": "com.example.tour_new_version.app-main-44:/drawable-hdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "/home/hock/.gradle/daemon/8.3/com.example.tour_new_version.app-merged_res-49:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/home/hock/.gradle/daemon/8.3/com.example.tour_new_version.app-main-44:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.tour_new_version.app-merged_res-49:/drawable-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.tour_new_version.app-main-44:/drawable-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/home/hock/.gradle/daemon/8.3/com.example.tour_new_version.app-merged_res-49:/drawable-v21_launch_background.xml.flat",
+        "source": "/home/hock/.gradle/daemon/8.3/com.example.tour_new_version.app-main-44:/drawable-v21/launch_background.xml"
+    },
+    {
+        "merged": "com.example.tour_new_version.app-merged_res-49:/drawable-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.example.tour_new_version.app-main-44:/drawable-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.example.tour_new_version.app-merged_res-49:/drawable-xhdpi_ic_launcher_background.png.flat",
+        "source": "com.example.tour_new_version.app-main-44:/drawable-xhdpi/ic_launcher_background.png"
     }
 ]

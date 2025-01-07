@@ -74,7 +74,7 @@
 48        android:debuggable="true"
 49        android:extractNativeLibs="true"
 50        android:icon="@mipmap/ic_launcher"
-51        android:label="tour_new_version" >
+51        android:label="CKH TOUR" >
 52        <activity
 53            android:name="com.example.tour_new_version.MainActivity"
 54            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

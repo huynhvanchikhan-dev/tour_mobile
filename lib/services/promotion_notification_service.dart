@@ -21,6 +21,7 @@ class PromotionNotificationService {
 
   // WebSocket configuration
   static const String _wsUrl = 'ws://54.252.193.168:8080/ws';
+  
   static const int _reconnectDelay = 5; // seconds
   static const int _connectionTimeout = 10; // seconds
 
@@ -33,7 +34,7 @@ class PromotionNotificationService {
   Future<void> _initializeNotifications() async {
     try {
       await _checkAndRequestNotificationPermissions();
-
+      print("${_wsUrl}");
       const androidInitializationSettings =
           AndroidInitializationSettings('@mipmap/ic_launcher');
 

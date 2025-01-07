@@ -70,8 +70,8 @@
 43        android:extractNativeLibs="true"
 44        android:icon="@mipmap/ic_launcher"
 44-->/home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:10:9-43
-45        android:label="tour_new_version" >
-45-->/home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:8:9-41
+45        android:label="CKH TOUR" >
+45-->/home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:8:9-33
 46        <activity
 46-->/home/hock/Desktop/mobile/tour_booking/android/app/src/main/AndroidManifest.xml:11:9-32:20
 47            android:name="com.example.tour_new_version.MainActivity"

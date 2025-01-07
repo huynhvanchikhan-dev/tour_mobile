@@ -5,6 +5,7 @@ import 'package:geocoding/geocoding.dart';
 import 'package:tour_new_version/models/auth_manager.dart';
 import 'package:tour_new_version/screens/login_screen.dart';
 import 'package:tour_new_version/screens/register_screen.dart';
+import 'package:tour_new_version/screens/search_screen.dart';
 
 class HomeAppBar extends StatefulWidget {
   const HomeAppBar({Key? key}) : super(key: key);
@@ -186,7 +187,14 @@ class _HomeAppBarState extends State<HomeAppBar> {
 
           // Icon search
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SearchScreen(),
+                          ),
+                        );
+            },
             child: Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
