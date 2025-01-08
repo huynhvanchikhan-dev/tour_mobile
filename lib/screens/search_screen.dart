@@ -18,7 +18,7 @@ class _SearchScreenState extends State<SearchScreen> {
   List<Map<String, dynamic>> categories = [];
   List<Destination> destinations = [];
   List<Tour> searchResults = [];
-  String baseUrl = "http://54.252.193.168:8080";
+  String baseUrl = "http://54.66.21.87:8080";
   bool _isLoading = false;
   final _formatCurrency = NumberFormat.currency(locale: 'vi_VN', symbol: '₫');
 

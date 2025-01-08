@@ -31,7 +31,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   void initState() {
     super.initState();
-    _userApi = UserApiService(baseUrl: 'http://54.252.193.168:8080');
+    _userApi = UserApiService(baseUrl: 'http://54.66.21.87:8080');
     _fetchUserProfile();
   }
 
@@ -326,11 +326,11 @@ class _ChangePasswordDialogState extends State<ChangePasswordDialog> {
 
     try {
       final url =
-          Uri.parse('http://54.252.193.168:8080/api/v2/users/change-password');
+          Uri.parse('http://54.66.21.87:8080/api/v2/users/change-password');
       final response = await http.post(
         url,
         headers: {
-          'Authorization': widget.token,
+          'Authorization': 'Bearer ${widget.token}',
           'Content-Type': 'application/json',
         },
         body: jsonEncode({

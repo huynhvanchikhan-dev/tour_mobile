@@ -7,7 +7,7 @@ import 'package:tour_new_version/widgets/post_bottom_bar.dart';
 class PostScreen extends StatelessWidget {
   final String tourId;
   final ToursApiService toursApiService =
-      ToursApiService(baseUrl: 'http://54.252.193.168:8080');
+      ToursApiService(baseUrl: 'http://54.66.21.87:8080');
 
   PostScreen({required this.tourId, super.key});
 

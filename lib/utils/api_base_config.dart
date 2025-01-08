@@ -1,3 +1,3 @@
 class ApiBaseConfig {
-  static String IP = "54.252.193.168";
+  static String IP = "54.66.21.87";
 }

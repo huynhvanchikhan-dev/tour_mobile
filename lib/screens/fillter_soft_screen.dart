@@ -17,7 +17,7 @@ class FillterSoftScreen extends StatefulWidget {
 
 class _FillterSoftScreenState extends State<FillterSoftScreen> {
   final DestinationsApiService _destinationsApiService =
-      DestinationsApiService(baseUrl: 'http://54.252.193.168:8080');
+      DestinationsApiService(baseUrl: 'http://54.66.21.87:8080');
   late Future<List<Tour>> _toursFuture;
   final _formatCurrency = NumberFormat.currency(locale: 'vi_VN', symbol: '₫');
 
